@@ -70,8 +70,9 @@
   display: block;
 }
 
-.code-area {color: #d3d7de;}
-
+.code-area {
+  color: #d3d7de;
+}
 
 @media screen and (max-width: 320px) {
   .code-area {
@@ -84,3 +85,83 @@
     line-height: 6.5vw;
   }
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+svg.like {
+  position: fixed;
+  z-index: 10;
+  top: calc(50vh - 160px);
+  left: calc(50vw - 160px);
+  border-radius: 100%;
+  transform: scale(0.3);
+  transform-origin: 50% 50%;
+  box-shadow: 0 0 250px rgba(0, 0, 0, 0.4);
+  background: #212121;
+  cursor: pointer;
+}
+
+svg.fly {
+  position: fixed;
+  top: calc(50vh - 55px);
+  left: calc(50vw - 55px);
+  fill: #18ffff;
+}
+
+svg.h {
+  position: fixed;
+  z-index: 8;
+  top: calc(50vh - 20px);
+  left: calc(50vw - 20px);
+  fill: #fbff00;
+
+  &.h-5,
+  &.h-6,
+  &.h-7,
+  &.h-8 {
+    fill: #00ffb8;
+  }
+}
+
+div.dot {
+  width: 12px;
+  height: 12px;
+  background: white;
+  position: fixed;
+  z-index: 9;
+  border-radius: 100%;
+  top: calc(50vh - 6px);
+  left: calc(50vw - 6px);
+
+  &:before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    top: -20px;
+    left: 2px;
+    position: absolute;
+    background: white;
+  }
+
+  &:after {
+    content: "";
+    width: 11px;
+    height: 11px;
+    border-radius: 100%;
+    top: -160px;
+    left: 2px;
+    position: absolute;
+    background: white;
+    display: none;
+  }
+}
+
+// ANIMATIONS
+
+

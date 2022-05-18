@@ -1,54 +1,26 @@
-<div class="row m-0 mt-3 p-2">
-  <div class="col-md-12">
-    <p class="page-header">My Portfolio</p>
-    <div class="divider mb-4" style="max-width:270px;"></div>
-    <div class="container p-0 mb-5" *ngIf="pinCode.value === getSecretCode()">
-      <div class="item" *ngFor="let item of imagePorts" (mouseover)="item.hovered = true"
-        (mouseout)="item.hovered = false">
-        <img (click)="openDialog(item.src)" [src]="item.src">
-        <div class="overlay" [ngClass]="{'hideOverlay': item.hovered}">
-          <div class="text">{{item.title}}</div>
-        </div>
-      </div>
-    </div>
-    <div class="container" *ngIf="pinCode.value !== getSecretCode()">
-      <div class="code-area">
-        <span style="color: #777;font-style:italic;">
-          // 401 Unauthorized.
-        </span>
-        <span>
-          <span style="color:#d65562;">
-            if
-          </span>
-          (<span style="color:#4ca8ef;">&nbsp;!</span><span
-            style="font-style: italic;color:#bdbdbd;">hasAccessCode&nbsp;</span>)
-          {{ '{' }}
-        </span>
-        <span>
-          <span style="padding-left: 15px;color:#2796ec">
-            <i style="width: 10px;display:inline-block"></i>throw
-          </span>
-          <span>
-            (<span style="color: #a6a61f">"ERROR! You don't have access to this page."</span>);
-          </span>
-          <span style="display:block">{{ '}' }}</span>
-          <span style="color: #777;font-style:italic; cursor: pointer;">
-            // <a (click)="toggleAccessCodeInput()">Do you have an access Code? Click here..</a>
-          </span>
-        </span>
-        <div class="input-group mb-2 mr-sm-2 mt-4" style="max-width: 300px;" *ngIf="showInputPinCode.value === true">
-          <input type="password" class="form-control" placeholder="Access Code" maxlength="6" #accessCode
-            (keydown.enter)="sendAccessCode(accessCode)">
-          <div class="input-group-append">
-            <button class="btn btn-outline-primary mb-2" (click)="sendAccessCode(accessCode)">ENTER</button>
-          </div>
-          <small id="passwordHelpBlock" class="form-text text-danger"
-            >
-            <span *ngIf="pinCode.value !== '' && pinCode.value !== getSecretCode()">You have entered an incorrect access code!</span>
-          </small>
-          <!-- <p *ngIf="hasExceededMaximumTryCount()">Exceeded Maximum Try!</p> -->
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<svg height="320" width="320" class="like" onclick="document.body.classList.toggle('liked');" (click)="openDialog(null)">
+  <path class="path" d="M 160 145 c 15 -90 170 -20 0 90 m 0 -90 c -15 -90 -170 -20 0 90" fill="white"/> <!-- 80 by 70 -->
+</svg>
+
+<!-- DECORATIONS (quite a lot of them) -->
+<div class="dot dot-1"></div>
+<div class="dot dot-2"></div>
+<div class="dot dot-3"></div>
+<div class="dot dot-4"></div>
+<div class="dot dot-5"></div>
+<div class="dot dot-6"></div>
+<div class="dot dot-7"></div>
+<div class="dot dot-8"></div>
+
+<svg height="40" width="40" viewBox="0 0 320 320" class="h h-1"><path class="path" d="M 160 145 c 15 -90 170 -20 0 90 m 0 -90 c -15 -90 -170 -20 0 90"/></svg>
+<svg height="40" width="40" viewBox="0 0 320 320" class="h h-2"><path class="path" d="M 160 145 c 15 -90 170 -20 0 90 m 0 -90 c -15 -90 -170 -20 0 90"/></svg>
+<svg height="40" width="40" viewBox="0 0 320 320" class="h h-3"><path class="path" d="M 160 145 c 15 -90 170 -20 0 90 m 0 -90 c -15 -90 -170 -20 0 90"/></svg>
+<svg height="40" width="40" viewBox="0 0 320 320" class="h h-4"><path class="path" d="M 160 145 c 15 -90 170 -20 0 90 m 0 -90 c -15 -90 -170 -20 0 90"/></svg>
+
+<svg height="40" width="40" viewBox="0 0 320 320" class="h h-5"><path class="path" d="M 160 145 c 15 -90 170 -20 0 90 m 0 -90 c -15 -90 -170 -20 0 90"/></svg>
+<svg height="40" width="40" viewBox="0 0 320 320" class="h h-6"><path class="path" d="M 160 145 c 15 -90 170 -20 0 90 m 0 -90 c -15 -90 -170 -20 0 90"/></svg>
+<svg height="40" width="40" viewBox="0 0 320 320" class="h h-7"><path class="path" d="M 160 145 c 15 -90 170 -20 0 90 m 0 -90 c -15 -90 -170 -20 0 90"/></svg>
+<svg height="40" width="40" viewBox="0 0 320 320" class="h h-8"><path class="path" d="M 160 145 c 15 -90 170 -20 0 90 m 0 -90 c -15 -90 -170 -20 0 90"/></svg>
+
+<svg height="110" width="110" viewBox="0 0 320 320" class="fly fly-1"><path class="path" d="M 160 145 c 15 -90 170 -20 0 90 m 0 -90 c -15 -90 -170 -20 0 90"/></svg>
+<svg height="110" width="110" viewBox="0 0 320 320" class="fly fly-2"><path class="path" d="M 160 145 c 15 -90 170 -20 0 90 m 0 -90 c -15 -90 -170 -20 0 90"/></svg>

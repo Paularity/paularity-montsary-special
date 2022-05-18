@@ -19,6 +19,8 @@ export class CollectionComponent implements OnInit {
 
   private SECRET_CODE = "5139";
 
+  isHeart = false;
+
   constructor(public dialog: MatDialog) {
     this.imagePorts = COLLECTION_LIST.collections.sort((a, b) => {
       if (a.title < b.title) {
@@ -34,7 +36,10 @@ export class CollectionComponent implements OnInit {
   openDialog(src) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = { src };
-    const dialogRef = this.dialog.open(LightboxModalComponent, dialogConfig);
+    this.clickedAudio();
+    setTimeout(() => {
+      const dialogRef = this.dialog.open(LightboxModalComponent, dialogConfig);
+    }, 3000);
 
     // dialogRef.afterClosed().subscribe((result) => {
     //   console.log(`Dialog result: ${result}`);
@@ -59,5 +64,16 @@ export class CollectionComponent implements OnInit {
   hasExceededMaximumTryCount() {
     if (this.inputTryCount.value >= 3) return true;
     return false;
+  }
+
+  toggleHeart() {
+    this.isHeart = !this.isHeart;
+  }
+
+  clickedAudio() {
+    let audio = new Audio();
+    audio.src = "../../../assets/audio/universe.mp3";
+    audio.load();
+    audio.play();
   }
 }

@@ -9,6 +9,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 export class LightboxModalComponent implements OnInit {
 
   data;
+  showImg = false;
 
   constructor(
     public dialogRef: MatDialogRef<LightboxModalComponent>,
